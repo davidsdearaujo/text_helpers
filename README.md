@@ -10,30 +10,64 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Text overflow helpers for Flutter.
 
 ## Features
+**InlineText / InlineRow**
+<img width="49%" src="https://user-images.githubusercontent.com/16373553/157923702-678b41cd-8b8b-4baa-8f74-c32ef4a57231.gif"/> <img width="49%" src="https://user-images.githubusercontent.com/16373553/157913688-c5526868-54da-41d4-b4b1-07746ac313ad.gif"/>
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+**InlineText + InlineRow**
+<img width="50%" src="https://user-images.githubusercontent.com/16373553/157912891-47c70ef7-aa13-4763-bafa-b2ccc359e484.gif"/>
 
 ## Getting started
+### pubspec.yaml
+```
+dependencies:
+  text_helpers: <lastest version>
+```
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### import
+```
+import 'package:text_helpers/text_helpers.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### InlineRow
+This widget can be used to resize just one of children when the row overflows;
 
+In this example, the first content will be reduced when the text overflows:
 ```dart
-const like = 'sample';
+InlineRow(
+  wrapIndex: 0,
+  children: [
+    Text('First content', overflow: TextOverflow.ellipsis),
+    Text('Second content'),
+    Text('Third content'),
+  ],
+),
 ```
 
-## Additional information
+In this example, the second content will be reduced when is overflowed:
+```dart
+InlineRow(
+  wrapIndex: 1,
+  children: [
+    Text('First content'),
+    Text('Second content', overflow: TextOverflow.ellipsis),
+    Text('Third content'),
+  ],
+),
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+### InlineText
+This widget can be used to hide letter by letter when the text overflows; This isn't the best solution, but solve the [flutter#18761](https://github.com/flutter/flutter/issues/18761)
+Look this simple example:
+```dart
+InlineText('Lorem Ipsum is simply dummy text')
+```
+
+<details>
+  <summary>GIF</summary>
+ <img width="49%" src="https://user-images.githubusercontent.com/16373553/157923702-678b41cd-8b8b-4baa-8f74-c32ef4a57231.gif"/>
+</details>

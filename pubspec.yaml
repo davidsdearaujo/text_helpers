@@ -1,6 +1,6 @@
 name: text_helpers
-description: Solve text overflow problems.
-version: 1.0.1
+description: Text overflow helpers for Flutter.
+version: 1.0.2
 homepage: https://github.com/davidsdearaujo/text_helpers
 git: https://github.com/davidsdearaujo/text_helpers
 
