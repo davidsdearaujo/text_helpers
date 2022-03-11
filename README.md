@@ -13,10 +13,10 @@ and the Flutter guide for
 Text overflow helpers for Flutter.
 
 ## Features
-**InlineText / InlineRow**
+### InlineText / InlineRow
 <img width="49%" src="https://user-images.githubusercontent.com/16373553/157923702-678b41cd-8b8b-4baa-8f74-c32ef4a57231.gif"/> <img width="49%" src="https://user-images.githubusercontent.com/16373553/157913688-c5526868-54da-41d4-b4b1-07746ac313ad.gif"/>
 
-**InlineText + InlineRow**
+### InlineText + InlineRow
 <img width="50%" src="https://user-images.githubusercontent.com/16373553/157912891-47c70ef7-aa13-4763-bafa-b2ccc359e484.gif"/>
 
 ## Getting started
