@@ -6,9 +6,15 @@ import 'package:flutter/widgets.dart';
 class InlineRow extends StatefulWidget {
   final List<Widget> children;
   final int wrapIndex;
+  final MainAxisSize mainAxisSize;
+  final CrossAxisAlignment crossAxisAlignment;
+  final MainAxisAlignment mainAxisAlignment;
   const InlineRow({
     Key? key,
-    required this.wrapIndex,
+    this.wrapIndex = 0,
+    this.mainAxisSize = MainAxisSize.max,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.mainAxisAlignment = MainAxisAlignment.start,
     required this.children,
   })  : assert(wrapIndex < children.length),
         assert(wrapIndex >= 0),
@@ -45,7 +51,9 @@ class _InlineRowState extends State<InlineRow> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: widget.mainAxisSize,
+        crossAxisAlignment: widget.crossAxisAlignment,
+        mainAxisAlignment: widget.mainAxisAlignment,
         children: List.generate(widget.children.length, (index) {
           final isCurrentWrapText = widget.wrapIndex == index;
           final sizesAlreadyLoaded = childrenSizes.isNotEmpty;
