@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:text_helpers/text_helpers.dart';
+
+import 'src/full_example.dart';
+import 'src/inline_row_example.dart';
+import 'src/inline_text_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,39 +33,38 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Text Helpers Example')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          InlineRow(
-            wrapIndex: 0,
-            children: const [
-              InlineText('Jogador 1'),
-              Text(': tem '),
-              Text('20 pontos'),
-            ],
-          ),
-          InlineRow(
-            wrapIndex: 0,
-            children: const [
-              InlineText('David Santana de Araujo'),
-              Text(': tem 20 pontos'),
-            ],
-          ),
-          InlineRow(
-            wrapIndex: 0,
-            children: const [
-              InlineText('Piá'),
-              Text(': tem 20 pontos'),
-            ],
-          ),
-          InlineRow(
-            wrapIndex: 0,
-            children: const [
-              InlineText('Nome do piá'),
-              Text(': tem 20 pontos'),
-            ],
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: Text('InlineRow'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => InlineRowExample()),
+                );
+              },
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              child: Text('InlineText'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => InlineTextExample()),
+                );
+              },
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              child: Text('Full Example'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FullExample()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

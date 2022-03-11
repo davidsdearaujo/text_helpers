@@ -12,7 +12,7 @@ class InlineRow extends StatefulWidget {
   const InlineRow({
     Key? key,
     this.wrapIndex = 0,
-    this.mainAxisSize = MainAxisSize.max,
+    this.mainAxisSize = MainAxisSize.min,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.mainAxisAlignment = MainAxisAlignment.start,
     required this.children,
